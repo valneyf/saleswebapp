@@ -13,8 +13,9 @@ namespace SalesWebApp.Controllers {
         }
 
         public IActionResult About() {
-            ViewData["Message"] = "Your application description page.";
-
+            ViewData["Message"] = "Creating a Sales application with C# and Blazor.";
+            ViewData["Maintainer"] = "Valney Filho";
+            
             return View();
         }
 
