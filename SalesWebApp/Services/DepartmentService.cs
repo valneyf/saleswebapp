@@ -1,6 +1,6 @@
 ﻿using SalesWebApp.Data;
 using SalesWebApp.Models;
-using System;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -13,8 +13,8 @@ namespace SalesWebApp.Services {
             _context = context;
         }
 
-        public List<Department> FindAll() {
-            return _context.Department.OrderBy(x => x.Name).ToList();
+        public async Task<List<Department>> FindAllAsync() {
+            return await _context.Department.OrderBy(x => x.Name).ToListAsync();
         }
     }
 }
